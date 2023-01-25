@@ -1,6 +1,7 @@
 import React from "react";
 import { Form } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { $t } from "../../helpers/locale-helper";
 import { setDarkMode } from "../../store/slices/theme-slice";
 
 const DarkModeSwitcher = () => {
@@ -10,7 +11,7 @@ const DarkModeSwitcher = () => {
     <div>
       <Form.Check type="switch"
        id="dmSwitch" 
-       label="Dark Mode"
+       label={darkMode ? $t("light-mode") :$t("dark-mode")}
         checked={darkMode}
         onChange={()=>dispatch(setDarkMode(!darkMode))} />
     </div>
